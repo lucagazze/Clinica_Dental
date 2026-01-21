@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NAV_LINKS } from '../constants';
+import { NAV_LINKS, COMPANY_NAME } from '../constants';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,7 +26,7 @@ const Header: React.FC = () => {
             <div className="flex items-center justify-center size-10 rounded-xl bg-primary/10 text-primary">
               <span className="material-symbols-outlined text-3xl">dentistry</span>
             </div>
-            <span className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">Clínica Dental</span>
+            <span className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">{COMPANY_NAME}</span>
           </div>
 
           {/* Desktop Nav */}
@@ -62,19 +62,19 @@ const Header: React.FC = () => {
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white dark:bg-background-dark border-b border-gray-100 dark:border-gray-800 animate-fadeIn">
+        <div className="md:hidden bg-white dark:bg-background-dark border-b border-gray-100 dark:border-gray-800 animate-fadeIn shadow-xl">
           <div className="px-4 py-4 space-y-4">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="block text-base font-medium text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
+                className="block text-base font-medium text-gray-600 dark:text-gray-300 hover:text-primary transition-colors p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
               </a>
             ))}
-            <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white text-sm font-bold py-3 px-6 rounded-xl transition-all">
+            <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white text-sm font-bold py-3 px-6 rounded-xl transition-all mt-4">
               <span className="material-symbols-outlined text-[20px]">calendar_month</span>
               <span>Reservar Cita</span>
             </a>

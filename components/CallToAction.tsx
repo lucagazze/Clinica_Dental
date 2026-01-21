@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { COMPANY_NAME } from '../constants';
 
 const CallToAction: React.FC = () => {
   const [result, setResult] = useState<string>("");
@@ -7,7 +8,7 @@ const CallToAction: React.FC = () => {
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsSubmitting(true);
-    setResult("Enviando...");
+    setResult(""); // Clear previous results
     
     const formData = new FormData(event.currentTarget);
 
@@ -22,15 +23,15 @@ const CallToAction: React.FC = () => {
         const data = await response.json();
 
         if (data.success) {
-          setResult("¡Formulario enviado con éxito!");
+          setResult("¡Mensaje enviado correctamente! Nos pondremos en contacto pronto.");
           (event.target as HTMLFormElement).reset();
         } else {
           console.error("Error", data);
-          setResult(data.message);
+          setResult("Hubo un problema. Por favor intenta nuevamente o llámanos.");
         }
     } catch (error) {
         console.error("Error de red", error);
-        setResult("Ocurrió un error al enviar el formulario.");
+        setResult("Ocurrió un error de conexión. Por favor intenta más tarde.");
     } finally {
         setIsSubmitting(false);
     }
@@ -49,7 +50,7 @@ const CallToAction: React.FC = () => {
              <div className="relative z-10">
                <h2 className="text-3xl md:text-4xl font-bold mb-6">¿Listo para transformar tu sonrisa?</h2>
                <p className="text-white/90 text-lg mb-8 leading-relaxed">
-                 Reserva tu cita hoy y da el primer paso hacia una versión más saludable y feliz de ti mismo.
+                 Reserva tu cita hoy en {COMPANY_NAME} y da el primer paso hacia una versión más saludable y feliz de ti mismo.
                </p>
                
                <div className="space-y-6">
@@ -156,7 +157,7 @@ const CallToAction: React.FC = () => {
                 </div>
                 
                 {result && (
-                    <div className={`p-4 rounded-xl text-center font-medium ${result.includes("éxito") ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400" : "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400"}`}>
+                    <div className={`p-4 rounded-xl text-center font-medium animate-fadeIn ${result.includes("éxito") ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400" : "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400"}`}>
                         {result}
                     </div>
                 )}

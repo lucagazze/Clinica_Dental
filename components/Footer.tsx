@@ -1,5 +1,5 @@
 import React from 'react';
-import { NAV_LINKS } from '../constants';
+import { NAV_LINKS, COMPANY_NAME } from '../constants';
 
 const Footer: React.FC = () => {
   return (
@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
               <div className="flex items-center justify-center size-8 rounded-lg bg-primary/10 text-primary">
                 <span className="material-symbols-outlined text-xl">dentistry</span>
               </div>
-              <span className="text-lg font-bold text-gray-900 dark:text-white">Clínica Dental</span>
+              <span className="text-lg font-bold text-gray-900 dark:text-white">{COMPANY_NAME}</span>
             </div>
             <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
               Brindando cuidado dental suave y moderno para toda la familia. Tu sonrisa es nuestra pasión.
@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-primary text-[18px]">mail</span>
-                <span>hola@clinicadental.com</span>
+                <span>hola@omnidental.com</span>
               </li>
             </ul>
           </div>
@@ -72,7 +72,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-gray-400">© 2024 Clínica Dental. Todos los derechos reservados.</p>
+          <p className="text-sm text-gray-400">© 2026 {COMPANY_NAME}. Todos los derechos reservados.</p>
           <div className="flex gap-6">
             <a href="#" className="text-gray-400 hover:text-primary transition-colors">
               <span className="sr-only">Facebook</span>

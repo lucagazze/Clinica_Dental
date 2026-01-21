@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Modal from './Modal';
 
 const Hero: React.FC = () => {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+
   return (
     <section id="home" className="relative pt-12 pb-20 lg:pt-24 lg:pb-32 overflow-hidden">
       {/* Decorative background elements */}
@@ -18,8 +21,9 @@ const Hero: React.FC = () => {
             </div>
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-[1.1]">
-              Experimenta la Odontología con un <span className="text-primary relative inline-block">
-                Toque Suave
+              Bienvenido a <br/>
+              <span className="text-primary relative inline-block">
+                Omni Dental
                 <svg className="absolute w-full h-3 -bottom-1 left-0 text-primary/30" preserveAspectRatio="none" viewBox="0 0 100 10">
                   <path d="M0 5 Q 50 10 100 5" fill="none" stroke="currentColor" strokeWidth="8"></path>
                 </svg>
@@ -34,7 +38,10 @@ const Hero: React.FC = () => {
               <a href="#contact" className="w-full sm:w-auto flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white text-base font-bold h-14 px-8 rounded-xl transition-all shadow-xl shadow-primary/25 transform hover:-translate-y-1">
                 Reserva tu Visita
               </a>
-              <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white dark:bg-white/10 text-gray-700 dark:text-white border border-gray-200 dark:border-gray-700 hover:border-primary/50 text-base font-bold h-14 px-8 rounded-xl transition-all hover:bg-gray-50 dark:hover:bg-white/5">
+              <button 
+                onClick={() => setIsVideoOpen(true)}
+                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white dark:bg-white/10 text-gray-700 dark:text-white border border-gray-200 dark:border-gray-700 hover:border-primary/50 text-base font-bold h-14 px-8 rounded-xl transition-all hover:bg-gray-50 dark:hover:bg-white/5"
+              >
                 <span className="material-symbols-outlined text-primary">play_circle</span>
                 Tour Virtual
               </button>
@@ -89,6 +96,21 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Video Modal Placeholder */}
+      <Modal 
+        isOpen={isVideoOpen} 
+        onClose={() => setIsVideoOpen(false)} 
+        title="Tour Virtual de Omni Dental"
+      >
+        <div className="aspect-video bg-gray-100 rounded-xl flex items-center justify-center">
+            <div className="text-center p-8">
+                <span className="material-symbols-outlined text-6xl text-gray-400 mb-4">videocam_off</span>
+                <p className="text-gray-500">El video del tour virtual estará disponible próximamente.</p>
+                <p className="text-sm text-gray-400 mt-2">Mientras tanto, ¡te invitamos a visitarnos en persona!</p>
+            </div>
+        </div>
+      </Modal>
     </section>
   );
 };
