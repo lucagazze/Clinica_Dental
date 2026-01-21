@@ -63,10 +63,13 @@ const Hero: React.FC = () => {
           <div className="flex-1 w-full max-w-xl lg:max-w-none relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-gray-200/50 dark:shadow-none aspect-[4/3] group">
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+              {/* Optimized Image Loading */}
               <img 
                 alt="Mujer sonriendo en una clínica dental moderna" 
                 className="object-cover w-full h-full transform transition-transform duration-700 group-hover:scale-105" 
-                src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1200&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1200&auto=format&fit=crop"
+                loading="eager"
+                fetchPriority="high"
               />
               
               {/* Floating Card */}

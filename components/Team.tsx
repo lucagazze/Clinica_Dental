@@ -40,6 +40,7 @@ const Team: React.FC = () => {
                     alt={member.name} 
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
                     src={member.image} 
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
                   <div className="absolute bottom-0 left-0 p-6 w-full">
@@ -67,8 +68,8 @@ const Team: React.FC = () => {
                 paragraph.trim() && <p key={index} className="text-gray-600 dark:text-gray-300 mb-4 text-lg leading-relaxed">{paragraph}</p>
             ))}
              <div className="mt-8 grid grid-cols-2 gap-4">
-                 <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop" className="rounded-xl h-48 w-full object-cover" alt="Clinica interior" />
-                 <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop" className="rounded-xl h-48 w-full object-cover" alt="Doctora con paciente" />
+                 <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop" className="rounded-xl h-48 w-full object-cover" alt="Clinica interior" loading="lazy" />
+                 <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop" className="rounded-xl h-48 w-full object-cover" alt="Doctora con paciente" loading="lazy" />
              </div>
         </div>
       </Modal>

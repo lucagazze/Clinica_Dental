@@ -13,10 +13,10 @@ const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading time
+    // Shorter loading time for an "instant" feel while still showing the preloader smoothly
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1000); 
     return () => clearTimeout(timer);
   }, []);
 
