@@ -22,12 +22,12 @@ const Header: React.FC = () => {
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center gap-3">
-            <div className="flex items-center justify-center size-10 rounded-xl bg-primary/10 text-primary">
+          <a href="/" className="flex items-center gap-3 group">
+            <div className="flex items-center justify-center size-10 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
               <span className="material-symbols-outlined text-3xl">dentistry</span>
             </div>
-            <span className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">{COMPANY_NAME}</span>
-          </div>
+            <span className="text-xl font-bold tracking-tight text-gray-900 dark:text-white group-hover:text-primary transition-colors">{COMPANY_NAME}</span>
+          </a>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
