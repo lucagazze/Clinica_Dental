@@ -1,0 +1,33 @@
+import React from 'react';
+import { SERVICES } from '../constants';
+
+const Services: React.FC = () => {
+  return (
+    <section id="services" className="py-20 bg-white dark:bg-gray-900/50 relative">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-primary font-bold tracking-wide uppercase text-sm mb-3">Nuestros Servicios</h2>
+          <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">Atención Integral para Cada Sonrisa</h3>
+          <p className="text-gray-600 dark:text-gray-300">Ofrecemos una gama completa de tratamientos dentales, desde cuidados preventivos hasta procedimientos restaurativos complejos, todo bajo un mismo techo.</p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {SERVICES.map((service) => (
+            <div key={service.id} className="group bg-background-light dark:bg-background-dark p-8 rounded-2xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100 dark:border-gray-800">
+              <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <span className="material-symbols-outlined text-3xl">{service.icon}</span>
+              </div>
+              <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{service.title}</h4>
+              <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">{service.description}</p>
+              <a href="#" className="inline-flex items-center text-primary font-bold text-sm hover:underline">
+                Saber más <span className="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Services;
