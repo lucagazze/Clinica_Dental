@@ -8,10 +8,11 @@ const Team: React.FC = () => {
   return (
     <section id="team" className="py-20 bg-[#fafafa] dark:bg-[#1b2027]">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row gap-16 items-start">
+        {/* Changed breakpoint from lg:flex-row to xl:flex-row. Tablets now stack vertically to avoid cramped images */}
+        <div className="flex flex-col xl:flex-row gap-12 xl:gap-24 items-start">
           
           {/* Text Content */}
-          <div className="flex-1 lg:sticky lg:top-24">
+          <div className="flex-1 w-full xl:w-auto xl:sticky xl:top-24">
             <h2 className="text-primary font-bold tracking-wide uppercase text-sm mb-3">Conoce al Equipo</h2>
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">Expertos que se Preocupan por Ti</h3>
             <p className="text-gray-600 dark:text-gray-300 mb-6 text-lg leading-relaxed">
@@ -22,7 +23,7 @@ const Team: React.FC = () => {
             </p>
             <button 
               onClick={() => setIsStoryOpen(true)}
-              className="bg-white dark:bg-white/10 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 hover:border-primary font-bold py-3 px-8 rounded-xl transition-all hover:bg-gray-50 dark:hover:bg-white/5"
+              className="bg-white dark:bg-white/10 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 hover:border-primary font-bold py-3 px-8 rounded-xl transition-all hover:bg-gray-50 dark:hover:bg-white/5 active:scale-95 duration-200"
             >
               Leer Nuestra Historia
             </button>
@@ -30,11 +31,18 @@ const Team: React.FC = () => {
           
           {/* Team Grid */}
           <div className="flex-[1.5] w-full">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {/* 
+                Grid Logic update: 
+                Mobile (default): 1 column
+                Tablet (sm to lg): 2 or 3 columns (since full width)
+                Desktop (xl): 2 columns (since sharing space with text)
+            */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-6">
               {TEAM.map((member, index) => (
                 <div 
                   key={member.id} 
-                  className={`group relative overflow-hidden rounded-2xl aspect-[3/4] bg-gray-200 ${index === 1 ? 'mt-0 sm:mt-12' : ''}`}
+                  // Removed the margin offset on index 1 for tablets/mobile to keep grid clean, kept only for XL desktop view
+                  className={`group relative overflow-hidden rounded-2xl aspect-[3/4] bg-gray-200 xl:mt-0 ${index === 1 ? 'xl:mt-12' : ''}`}
                 >
                   <img 
                     alt={member.name} 
@@ -47,7 +55,7 @@ const Team: React.FC = () => {
                     <h4 className="text-white text-xl font-bold">{member.name}</h4>
                     <p className="text-primary text-sm font-medium mb-2">{member.role}</p>
                     <div className="h-0 overflow-hidden group-hover:h-auto transition-all duration-300 opacity-0 group-hover:opacity-100">
-                      <p className="text-gray-300 text-sm">{member.description}</p>
+                      <p className="text-gray-300 text-sm leading-snug">{member.description}</p>
                     </div>
                   </div>
                 </div>

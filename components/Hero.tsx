@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
             </div>
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-[1.1]">
-              Bienvenido a <br/>
+              Tu Salud y Confianza Comienzan en <br/>
               <span className="text-primary relative inline-block">
                 Omni Dental
                 <svg className="absolute w-full h-3 -bottom-1 left-0 text-primary/30" preserveAspectRatio="none" viewBox="0 0 100 10">
