@@ -6,23 +6,42 @@ const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 10);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    // Actualizamos la URL sutilmente sin recargar
+    window.history.pushState({}, '', '/');
+  };
+
   return (
-    <header className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+    <header className={`sticky top-0 z-50 w-full transition-all duration-500 ease-in-out will-change-transform ${
       isScrolled 
-        ? 'bg-white/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 shadow-sm' 
-        : 'bg-transparent border-b border-transparent'
+        ? 'bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 shadow-sm py-0' 
+        : 'bg-transparent border-b border-transparent py-2'
     }`}>
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 md:h-20 transition-all duration-300">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-3 group">
+          <a href="/" onClick={scrollToTop} className="flex items-center gap-3 group">
             <div className="flex items-center justify-center size-10 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
               <span className="material-symbols-outlined text-3xl">dentistry</span>
             </div>
@@ -52,7 +71,7 @@ const Header: React.FC = () => {
             {/* Mobile Menu Button */}
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+              className="md:hidden p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 active:scale-95 transition-transform"
             >
               <span className="material-symbols-outlined">{isMobileMenuOpen ? 'close' : 'menu'}</span>
             </button>

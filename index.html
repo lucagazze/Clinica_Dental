@@ -111,6 +111,15 @@
       
       body {
         font-family: 'Plus Jakarta Sans', sans-serif;
+        /* PERFORMANCE OPTIMIZATIONS */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+      }
+
+      /* Hardware acceleration for smoother animations */
+      * {
+        backface-visibility: hidden; 
       }
       
       details > summary {
