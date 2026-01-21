@@ -35,7 +35,7 @@ const Header: React.FC = () => {
               <a 
                 key={link.label}
                 href={link.href}
-                className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
+                className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary transition-colors relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
               >
                 {link.label}
               </a>
@@ -44,7 +44,7 @@ const Header: React.FC = () => {
 
           {/* CTA Button & Mobile Toggle */}
           <div className="flex items-center gap-4">
-            <a href="#reservation-form" className="hidden md:flex items-center gap-2 bg-primary hover:bg-primary-dark text-white text-sm font-bold py-2.5 px-6 rounded-xl transition-all shadow-lg shadow-primary/20 transform hover:-translate-y-0.5">
+            <a href="#reservation-form" className="hidden md:flex items-center gap-2 bg-primary hover:bg-primary-dark text-white text-sm font-bold py-2.5 px-6 rounded-xl transition-all shadow-lg shadow-primary/20 transform hover:-translate-y-0.5 active:scale-95 duration-200">
               <span className="material-symbols-outlined text-[20px]">calendar_month</span>
               <span>Reservar Cita</span>
             </a>
@@ -74,7 +74,7 @@ const Header: React.FC = () => {
                 {link.label}
               </a>
             ))}
-            <a href="#reservation-form" onClick={() => setIsMobileMenuOpen(false)} className="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white text-sm font-bold py-3 px-6 rounded-xl transition-all mt-4">
+            <a href="#reservation-form" onClick={() => setIsMobileMenuOpen(false)} className="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white text-sm font-bold py-3 px-6 rounded-xl transition-all mt-4 active:scale-95">
               <span className="material-symbols-outlined text-[20px]">calendar_month</span>
               <span>Reservar Cita</span>
             </a>

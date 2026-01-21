@@ -93,7 +93,7 @@ const CallToAction: React.FC = () => {
                             name="name" 
                             id="name"
                             required
-                            className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-[#15191f] border border-gray-200 dark:border-gray-700 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all dark:text-white"
+                            className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-[#15191f] border border-gray-200 dark:border-gray-700 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all dark:text-white"
                             placeholder="Juan Pérez"
                         />
                     </div>
@@ -104,7 +104,7 @@ const CallToAction: React.FC = () => {
                             name="email" 
                             id="email"
                             required
-                            className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-[#15191f] border border-gray-200 dark:border-gray-700 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all dark:text-white"
+                            className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-[#15191f] border border-gray-200 dark:border-gray-700 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all dark:text-white"
                             placeholder="juan@ejemplo.com"
                         />
                     </div>
@@ -115,7 +115,7 @@ const CallToAction: React.FC = () => {
                     <select 
                         name="subject"
                         id="subject" 
-                        className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-[#15191f] border border-gray-200 dark:border-gray-700 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all dark:text-white"
+                        className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-[#15191f] border border-gray-200 dark:border-gray-700 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all dark:text-white"
                     >
                         <option value="Consulta General">Consulta General</option>
                         <option value="Limpieza">Limpieza Dental</option>
@@ -131,7 +131,7 @@ const CallToAction: React.FC = () => {
                         id="message"
                         required
                         rows={4}
-                        className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-[#15191f] border border-gray-200 dark:border-gray-700 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none dark:text-white"
+                        className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-[#15191f] border border-gray-200 dark:border-gray-700 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all resize-none dark:text-white"
                         placeholder="¿Cómo podemos ayudarte?"
                     ></textarea>
                 </div>
@@ -140,7 +140,7 @@ const CallToAction: React.FC = () => {
                     <button 
                         type="submit" 
                         disabled={isSubmitting}
-                        className="w-full bg-primary hover:bg-primary-dark text-white font-bold py-4 px-8 rounded-xl transition-all shadow-lg shadow-primary/20 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                        className="w-full bg-primary hover:bg-primary-dark text-white font-bold py-4 px-8 rounded-xl transition-all shadow-lg shadow-primary/20 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2 active:scale-95 duration-200"
                     >
                         {isSubmitting ? (
                             <>

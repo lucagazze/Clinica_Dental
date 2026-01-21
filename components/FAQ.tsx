@@ -23,13 +23,13 @@ const FAQ: React.FC = () => {
           {FAQS.map((faq, index) => (
             <div 
               key={index} 
-              className="bg-white dark:bg-[#1b2027] rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-800 transition-all hover:shadow-md"
+              className={`bg-white dark:bg-[#1b2027] rounded-2xl overflow-hidden border transition-all duration-300 hover:shadow-md ${openIndex === index ? 'border-primary/30 shadow-md ring-1 ring-primary/5' : 'border-gray-100 dark:border-gray-800'}`}
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
+                className={`w-full flex items-center justify-between p-6 text-left focus:outline-none transition-colors ${openIndex === index ? 'bg-primary/5' : ''}`}
               >
-                <span className="text-lg font-bold text-gray-900 dark:text-white pr-8">{faq.question}</span>
+                <span className={`text-lg font-bold pr-8 transition-colors ${openIndex === index ? 'text-primary' : 'text-gray-900 dark:text-white'}`}>{faq.question}</span>
                 <span className={`material-symbols-outlined text-primary transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}>
                   expand_more
                 </span>
@@ -40,7 +40,7 @@ const FAQ: React.FC = () => {
                   openIndex === index ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'
                 }`}
               >
-                <div className="p-6 pt-0 text-gray-600 dark:text-gray-300 leading-relaxed border-t border-transparent">
+                <div className="p-6 pt-0 text-gray-600 dark:text-gray-300 leading-relaxed border-t border-transparent mt-4">
                   {faq.answer}
                 </div>
               </div>

@@ -17,17 +17,17 @@ const Services: React.FC = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {SERVICES.map((service) => (
-            <div key={service.id} className="group flex flex-col bg-background-light dark:bg-background-dark p-8 rounded-2xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100 dark:border-gray-800 h-full">
+            <div key={service.id} className="group flex flex-col bg-background-light dark:bg-background-dark p-8 rounded-2xl transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1 border border-gray-100 dark:border-gray-800 hover:border-primary/20 h-full cursor-pointer" onClick={() => setSelectedService(service)}>
               <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                 <span className="material-symbols-outlined text-3xl">{service.icon}</span>
               </div>
               <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{service.title}</h4>
               <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed flex-grow">{service.description}</p>
               <button 
-                onClick={() => setSelectedService(service)}
-                className="inline-flex items-center text-primary font-bold text-sm hover:underline self-start"
+                onClick={(e) => { e.stopPropagation(); setSelectedService(service); }}
+                className="inline-flex items-center text-primary font-bold text-sm hover:underline self-start group/btn"
               >
-                Saber más <span className="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+                Saber más <span className="material-symbols-outlined text-sm ml-1 transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
               </button>
             </div>
           ))}

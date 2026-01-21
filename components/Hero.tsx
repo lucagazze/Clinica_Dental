@@ -35,12 +35,12 @@ const Hero: React.FC = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start pt-2">
-              <a href="#reservation-form" className="w-full sm:w-auto flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white text-base font-bold h-14 px-8 rounded-xl transition-all shadow-xl shadow-primary/25 transform hover:-translate-y-1">
+              <a href="#reservation-form" className="w-full sm:w-auto flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white text-base font-bold h-14 px-8 rounded-xl transition-all shadow-xl shadow-primary/25 transform hover:-translate-y-1 active:scale-95 duration-200">
                 Reserva tu Visita
               </a>
               <button 
                 onClick={() => setIsVideoOpen(true)}
-                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white dark:bg-white/10 text-gray-700 dark:text-white border border-gray-200 dark:border-gray-700 hover:border-primary/50 text-base font-bold h-14 px-8 rounded-xl transition-all hover:bg-gray-50 dark:hover:bg-white/5"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white dark:bg-white/10 text-gray-700 dark:text-white border border-gray-200 dark:border-gray-700 hover:border-primary/50 text-base font-bold h-14 px-8 rounded-xl transition-all hover:bg-gray-50 dark:hover:bg-white/5 active:scale-95 duration-200"
               >
                 <span className="material-symbols-outlined text-primary">play_circle</span>
                 Tour Virtual
