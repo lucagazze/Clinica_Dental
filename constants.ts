@@ -8,7 +8,6 @@ export const NAV_LINKS: NavLink[] = [
   { label: "Equipo", href: "#team" },
   { label: "Testimonios", href: "#testimonials" },
   { label: "Preguntas", href: "#faq" },
-  { label: "Contacto", href: "#contact" },
 ];
 
 export const SERVICES: Service[] = [

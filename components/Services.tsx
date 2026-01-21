@@ -61,7 +61,7 @@ const Services: React.FC = () => {
           
           <div className="bg-primary/5 p-4 rounded-xl border border-primary/10 mt-6">
             <p className="text-sm text-gray-600 dark:text-gray-400 text-center">
-              ¿Te interesa este tratamiento? <a href="#contact" onClick={() => setSelectedService(null)} className="text-primary font-bold hover:underline">Reserva una consulta</a> para evaluarte.
+              ¿Te interesa este tratamiento? <a href="#reservation-form" onClick={() => setSelectedService(null)} className="text-primary font-bold hover:underline">Reserva una consulta</a> para evaluarte.
             </p>
           </div>
         </div>

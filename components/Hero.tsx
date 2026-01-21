@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start pt-2">
-              <a href="#contact" className="w-full sm:w-auto flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white text-base font-bold h-14 px-8 rounded-xl transition-all shadow-xl shadow-primary/25 transform hover:-translate-y-1">
+              <a href="#reservation-form" className="w-full sm:w-auto flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white text-base font-bold h-14 px-8 rounded-xl transition-all shadow-xl shadow-primary/25 transform hover:-translate-y-1">
                 Reserva tu Visita
               </a>
               <button 

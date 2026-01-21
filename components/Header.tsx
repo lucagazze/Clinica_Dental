@@ -44,7 +44,7 @@ const Header: React.FC = () => {
 
           {/* CTA Button & Mobile Toggle */}
           <div className="flex items-center gap-4">
-            <a href="#contact" className="hidden md:flex items-center gap-2 bg-primary hover:bg-primary-dark text-white text-sm font-bold py-2.5 px-6 rounded-xl transition-all shadow-lg shadow-primary/20 transform hover:-translate-y-0.5">
+            <a href="#reservation-form" className="hidden md:flex items-center gap-2 bg-primary hover:bg-primary-dark text-white text-sm font-bold py-2.5 px-6 rounded-xl transition-all shadow-lg shadow-primary/20 transform hover:-translate-y-0.5">
               <span className="material-symbols-outlined text-[20px]">calendar_month</span>
               <span>Reservar Cita</span>
             </a>
@@ -74,7 +74,7 @@ const Header: React.FC = () => {
                 {link.label}
               </a>
             ))}
-            <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white text-sm font-bold py-3 px-6 rounded-xl transition-all mt-4">
+            <a href="#reservation-form" onClick={() => setIsMobileMenuOpen(false)} className="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white text-sm font-bold py-3 px-6 rounded-xl transition-all mt-4">
               <span className="material-symbols-outlined text-[20px]">calendar_month</span>
               <span>Reservar Cita</span>
             </a>

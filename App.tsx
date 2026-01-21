@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -7,10 +7,25 @@ import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
 import CallToAction from './components/CallToAction';
 import Footer from './components/Footer';
+import Preloader from './components/Preloader';
 
 const App: React.FC = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Preloader />;
+  }
+
   return (
-    <div className="min-h-screen bg-background-light dark:bg-background-dark text-text-dark font-display">
+    <div className="min-h-screen bg-background-light dark:bg-background-dark text-text-dark font-display animate-fadeIn">
       <Header />
       <main className="flex flex-col w-full">
         <Hero />

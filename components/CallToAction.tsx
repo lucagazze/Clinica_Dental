@@ -81,7 +81,7 @@ const CallToAction: React.FC = () => {
           </div>
 
           {/* Right Side - Form */}
-          <div className="lg:w-3/5 p-8 md:p-12 bg-white dark:bg-[#1b2027]">
+          <div id="reservation-form" className="lg:w-3/5 p-8 md:p-12 bg-white dark:bg-[#1b2027] scroll-mt-32">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Envíanos un Mensaje</h3>
             
             <form onSubmit={onSubmit} className="space-y-6">
