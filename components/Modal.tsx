@@ -29,13 +29,6 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
     return () => { document.body.style.overflow = 'unset'; };
   }, [isOpen]);
 
-  // Close on click outside
-  const handleBackdropClick = (e: React.MouseEvent) => {
-    if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
-      onClose();
-    }
-  };
-
   if (!isOpen) return null;
 
   return (
