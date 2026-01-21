@@ -2,7 +2,7 @@
 <html lang="es" class="light scroll-smooth">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     
     <!-- SEO Meta Tags -->
     <title>Omni Dental - Odontología con un Toque Suave</title>
@@ -12,9 +12,17 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://clinicadental-sand.vercel.app/" />
     
-    <!-- Favicon -->
+    <!-- PWA & Mobile Icons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="alternate icon" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Theme Colors for Browser UI -->
+    <meta name="theme-color" content="#5bc8c1" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Omni Dental" />
     
     <!-- Preconnect for Image Speed -->
     <link rel="preconnect" href="https://images.unsplash.com" />
@@ -33,6 +41,53 @@
     <meta property="twitter:title" content="Omni Dental - Tu Sonrisa, Nuestra Pasión" />
     <meta property="twitter:description" content="Descubre una odontología moderna y sin dolor. Especialistas en ortodoncia, estética y cuidado familiar." />
     <meta property="twitter:image" content="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1200&auto=format&fit=crop" />
+
+    <!-- Structured Data (JSON-LD) for Local SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Dentist",
+      "name": "Omni Dental",
+      "image": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1200",
+      "description": "Clínica dental moderna ofreciendo servicios de odontología general, ortodoncia y estética dental.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Wellness Blvd, Suite 400",
+        "addressLocality": "San Francisco",
+        "addressRegion": "CA",
+        "postalCode": "94103",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.7749,
+        "longitude": -122.4194
+      },
+      "url": "https://clinicadental-sand.vercel.app/",
+      "telephone": "+15551234567",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "14:00"
+        }
+      ],
+      "priceRange": "$$"
+    }
+    </script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
